@@ -11,6 +11,7 @@ sys.setdefaultencoding('utf-8')
 
 def outputline(columns, maxnum_columns):
     c = len(columns)
+    columns = map(lambda t: t.replace('\n','<br/>'), columns)
     text = '|'.join(columns)
     print('|' + text + ('|' * (maxnum_columns-c))) + '|'
 
