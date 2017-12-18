@@ -11,7 +11,7 @@ A PopClip extension which converts tab separated text to Markdown's table format
 3. Restart PopClip
 
 **NOTE**: Since this is not an official extension, choose 'Install "To markdown table"'.
-<!-- Add an image -->
+![Choose Install](images/installation_alert.png)
 
 ## How to use
 
@@ -19,10 +19,10 @@ There are 2 ways to convert text.
 
 |operation|action|
 |---|---|
-|![](images/icon_small.png)|Convert all lines as table contents, with blank header|
-|⌥ + ![](images/icon_small.png)|Convert a first line as table header, the others as contents|
+|![](images/icon.png)|Convert all lines as table contents, with blank header|
+|⌥ + ![](images/icon.png)|Convert a first line as table header, the others as contents|
 
-Select text, and select ![](images/icon_small.png) icon.
+Select text, and select ![](images/icon.png) icon.
 <!-- Add animated gif image -->
 
 If you select it with option(⌥) key, the first line of text is used as a table header. 
