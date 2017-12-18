@@ -12,7 +12,7 @@ A PopClip extension which converts tab separated text to Markdown's table format
 2. Double click **mdtable.popclipext**
 3. Restart PopClip
 
-**NOTE**: Since this is not an official extension, choose 'Install "To markdown table"'.
+**NOTE**: Since this is not an official extension, you will see the following alert. Choose 'Install "To markdown table"'.
 ![Choose Install](images/installation_alert.png)
 
 ## How to use
@@ -24,14 +24,14 @@ There are 2 ways to convert text.
 |![](images/icon_small.png)|Convert all lines as table contents, with blank header|
 |⌥ + ![](images/icon_small.png)|Convert a first line as table header, the others as contents|
 
-Select text, and select ![](images/icon_small.png) icon.
-<!-- Add animated gif image -->
+Select text, and choose ![](images/icon_small.png) icon in PopClip bar. If the text includes tab characters, the extension converts it to multi columns table.
 
-If you select it with option(⌥) key, the first line of text is used as a table header. 
-<!-- Add animated gif image -->
+And if you select it with option(⌥) key, the first line of text is used as a table header. 
+
+![](convert_with_option.gif)
 
 ## Uninstallation
-Remove mdtable.popclipext from `/Library/Application Support/PopClip/Extensions`.
+Remove **mdtable.popclipext** package from `/Library/Application Support/PopClip/Extensions`.
 
 ## License
 MIT License.
