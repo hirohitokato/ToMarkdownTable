@@ -3,37 +3,56 @@
 
 import os
 import sys
+import csv
+import StringIO
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-def outputline(line, num_columns):
-    c = line.count('\t')
-    text = line.replace('\t', '|')
-    print('|' + text + ('|' * (num_columns-c)))
+def outputline(columns, maxnum_columns):
+    c = len(columns)
+    text = '|'.join(columns)
+    print('|' + text + ('|' * (maxnum_columns-c))) + '|'
 
 ### Initialize
-
-lines = os.environ['POPCLIP_TEXT'].splitlines()
 
 # If option key(⌥) is pressed, treat the first line as a header
 modified = 1 if (os.environ['POPCLIP_MODIFIER_FLAGS'] == "524288") else 0
 
+# Get whole text
+# input = ""
+# for line in sys.stdin:
+# 	input += line + '\n'
+input = os.environ['POPCLIP_TEXT']
+io = StringIO.StringIO(input)
+
+# Guess the dialect
+try:
+    dialect = csv.Sniffer().sniff(io.readline(), "\t,")
+except:
+    dialect = csv.excel
+io.seek(0)
+
+# Convert text to a list of rows
+rows = []
+for row in csv.reader(io, dialect):
+    rows.append(row)
+
 # Count the maximum number of columns in each row
-num_columns = reduce(lambda x,y: max(x, y), map(lambda l: l.count('\t'), lines)) + 1
+maxnum_columns = reduce(lambda x,y: max(x, y), map(lambda row: len(row), rows))
 
 ### Convert & Output
 
 # Header
 if modified:
-    outputline(lines[0], num_columns)
-    lines = lines[1:]
+    outputline(rows[0], maxnum_columns)
+    rows = rows[1:]
 else:
-	print('|' * (num_columns) + '|')
+	print('|' * (maxnum_columns) + '|')
 
 # Separator
-print '|---' * (num_columns) + '|'
+print '|---' * (maxnum_columns) + '|'
 
 # Contents
-for line in lines:
-    outputline(line, num_columns)
+for columns in rows:
+    outputline(columns, maxnum_columns)
