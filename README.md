@@ -3,6 +3,8 @@ A PopClip extension which converts tab separated text to Markdown's table format
 
 ![ToMarkdownTable](images/icon.png)
 
+![](images/convert_with_option.gif)
+
 ## Required
 [PopClip for Mac](http://pilotmoon.com/popclip/)
 
@@ -27,8 +29,6 @@ There are 2 ways to convert text.
 Select text, and choose ![](images/icon_small.png) icon in PopClip bar. If the text includes tab characters, the extension converts it to multi columns table.
 
 And if you select it with option(⌥) key, the first line of text is used as a table header. 
-
-![](images/convert_with_option.gif)
 
 ## Uninstallation
 Remove **mdtable.popclipext** package from `/Library/Application Support/PopClip/Extensions`.
