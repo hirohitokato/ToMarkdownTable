@@ -28,7 +28,7 @@ Select text, and choose ![](images/icon_small.png) icon in PopClip bar. If the t
 
 And if you select it with option(⌥) key, the first line of text is used as a table header. 
 
-![](convert_with_option.gif)
+![](images/convert_with_option.gif)
 
 ## Uninstallation
 Remove **mdtable.popclipext** package from `/Library/Application Support/PopClip/Extensions`.
